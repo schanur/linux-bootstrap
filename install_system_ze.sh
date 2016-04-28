@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 GITHUB_USER_BASE_DOMAIN="https://github.com/schanur"
 
 FIREFOX_DOWNLOAD_PATH="local/bin/firefox"
@@ -16,6 +20,7 @@ if [ ! -d "local/dev" ]; then
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/avr-3-phase-high-voltage-driver.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/bad-code-i-wrote-as-a-kid.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/bash-status-prompt.git)
+    (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/blimp.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/dotfiles.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/emacs.d.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/gcov-highlight.git)
@@ -27,12 +32,17 @@ if [ ! -d "local/dev" ]; then
 
 fi
 
+if [ ! -d "local/inactive_dev" ]; then
+    echo "Clone own inactive repositories."
+    mkdir -p local/inactive_dev
+    (cd local/inactive_dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/36-cube-solver.git)
+fi
+
 if [ ! -d ".emace.s/.git" ]; then
     echo "git clone emacs config"
     if [ -d ".emacs.d" ]; then
-	echo "  Backup .emacs folder"
-	mv .emacs.d .emacs.d.pre-auto-install-script
+        echo "  Backup .emacs folder"
+        mv .emacs.d .emacs.d.pre-auto-install-script
     fi
     ln -s local/dev/emacs.d .emacs.d
 fi
-
