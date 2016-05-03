@@ -36,6 +36,7 @@ network-manager \
 nfs-common \
 openssh-server \
 pandoc \
+powertop \
 printer-driver-all
 rsync \
 smartmontools \
@@ -96,9 +97,11 @@ xmount \
 xtrlock \
 "
 PACKAGE_LIST_DEV="\
+bashdb \
 check \
 clang \
 cmake \
+ddd \
 doxygen \
 doxygen-gui \
 ffmpeg-doc \
@@ -121,6 +124,7 @@ rake \
 ruby-method-source \
 swig \
 valgrind \
+zshdb \
 "
 
 PACKAGE_LIST_DEV_DOC="\
