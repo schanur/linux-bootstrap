@@ -160,11 +160,11 @@ git config --global user.email "root@localhost"
 git config --global user.name  "root"
 
 # eatmydata
-apt-get install \
-        ${PACKAGE_LIST} \
-        ${PACKAGE_LIST_X11} \
-        ${PACKAGE_LIST_VIRT} \
-        ${PACKAGE_LIST_DEV} \
+apt-get install                 \
+        ${PACKAGE_LIST}         \
+        ${PACKAGE_LIST_X11}     \
+        ${PACKAGE_LIST_VIRT}    \
+        ${PACKAGE_LIST_DEV}     \
         ${PACKAGE_LIST_DEV_DOC} \
         ${PACKAGE_LIST_NONFREE}
 

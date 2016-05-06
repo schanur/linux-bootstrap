@@ -29,7 +29,6 @@ if [ ! -d "local/dev" ]; then
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/octree-raytracer.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/slime-mold.git)
     (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/tedder.git)
-
 fi
 
 if [ ! -d "local/inactive_dev" ]; then
