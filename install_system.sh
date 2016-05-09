@@ -4,10 +4,14 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-PACKAGE_LIST_EARLY="\
+
+PACKAGE_LIST_EARLY_1="\
+git \
+"
+
+PACKAGE_LIST_EARLY_2="\
 eatmydata \
 etckeeper \
-git \
 "
 
 PACKAGE_LIST="\
@@ -31,7 +35,6 @@ libreoffice \
 lynx \
 mc \
 moc \
-mplayer \
 network-manager \
 nfs-common \
 openssh-server \
@@ -53,20 +56,15 @@ zsh \
 "
 
 PACKAGE_LIST_X11="\
-brasero \
 ddd \
 doxygen-gui \
 filezilla \
 gedit \
 gedit-plugins \
-gimp \
 gksu \
 gnome-commander \
-gpodder \
-handbrake \
 i3 \
 icedove \
-k3b \
 mesa-utils \
 mesa-utils-extra \
 network-manager-gnome \
@@ -76,11 +74,20 @@ network-manager-vpnc-gnome \
 network-manager-pptp-gnome \
 rxvt-unicode-256color \
 system-config-printer \
-vlc \
 wdm \
 xfonts-terminus \
 xserver-xorg \
 xterm \
+"
+
+PACKAGE_LIST_X11_MULTIMEDIA="\
+brasero \
+handbrake \
+gimp \
+gpodder \
+k3b \
+mplayer \
+vlc \
 "
 
 PACKAGE_LIST_VIRT="\
@@ -96,6 +103,7 @@ vmdebootstrap \
 xmount \
 xtrlock \
 "
+
 PACKAGE_LIST_DEV="\
 bashdb \
 check \
@@ -154,19 +162,24 @@ firmware-iwlwifi \
 firmware-linux \
 "
 
-apt-get install ${PACKAGE_LIST_EARLY}
+apt-get install ${PACKAGE_LIST_EARLY_1}
 
 git config --global user.email "root@localhost"
 git config --global user.name  "root"
 
+apt-get install ${PACKAGE_LIST_EARLY_2}
+
 # eatmydata
-apt-get install                 \
-        ${PACKAGE_LIST}         \
-        ${PACKAGE_LIST_X11}     \
-        ${PACKAGE_LIST_VIRT}    \
-        ${PACKAGE_LIST_DEV}     \
-        ${PACKAGE_LIST_DEV_DOC} \
-        ${PACKAGE_LIST_NONFREE}
+apt-get install                        \
+        ${PACKAGE_LIST}                \
+        ${PACKAGE_LIST_X11}            \
+        ${PACKAGE_LIST_DEV}            \
+        ${PACKAGE_LIST_DEV_DOC}
+
+apt-get install                        \
+        ${PACKAGE_LIST_NONFREE}        \
+        ${PACKAGE_LIST_X11_MULTIMEDIA} \
+	${PACKAGE_LIST_VIRT}
 
 # Check for inclusion:
 # logtail
