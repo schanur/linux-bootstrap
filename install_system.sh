@@ -23,6 +23,7 @@ apparmor-profiles \
 apparmor-profiles-extra \
 apparmor-utils \
 aptitude \
+arj \
 cclive \
 colortest \
 conntrack \
@@ -31,17 +32,25 @@ emacs \
 exfat-utils \
 gddrescue \
 imagemagick \
+lhasa \
 libreoffice \
 lynx \
+lzip \
 mc \
 moc \
+mplayer \
+ncompress \
 network-manager \
 nfs-common \
 openssh-server \
 pandoc \
 powertop \
-printer-driver-all
+printer-driver-all \
+p7zip-rar \
 rsync \
+rzip \
+unace \
+unalz \
 smartmontools \
 smbclient \
 sshfs \
@@ -52,21 +61,31 @@ wordnet \
 xloadimage \
 xz-utils \
 youtube-dl \
+zoo \
 zsh \
 "
 
 PACKAGE_LIST_X11="\
+brasero \
 ddd \
 doxygen-gui \
 filezilla \
+file-roller \
 gedit \
 gedit-plugins \
+gimp \
 gksu \
 gnome-commander \
+gpodder \
+handbrake \
 i3 \
 icedove \
+k3b \
 mesa-utils \
 mesa-utils-extra \
+mirage \
+mupdf \
+mupdf-tools \
 network-manager-gnome \
 network-manager-openconnect-gnome \
 network-manager-openvpn-gnome \
@@ -74,6 +93,7 @@ network-manager-vpnc-gnome \
 network-manager-pptp-gnome \
 rxvt-unicode-256color \
 system-config-printer \
+vlc \
 wdm \
 xfonts-terminus \
 xserver-xorg \
@@ -120,12 +140,14 @@ gitk \
 git-cola \
 global \
 g++ \
-libclang-dev
+libclang-dev \
+libcrypto++-dev \
 libglib2.0-doc \
-libsdl2-dev
+libsdl2-dev \
 lldb \
 make \
 meld \
+libpcap-dev \
 pry \
 python3 \
 rake \
