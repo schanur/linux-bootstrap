@@ -29,6 +29,7 @@ colortest \
 conntrack \
 cups \
 emacs \
+emacs24-dbg \
 exfat-utils \
 gddrescue \
 imagemagick \
