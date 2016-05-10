@@ -143,13 +143,14 @@ g++ \
 libclang-dev \
 libcrypto++-dev \
 libglib2.0-doc \
+libpcap-dev \
 libsdl2-dev \
 lldb \
 make \
 meld \
-libpcap-dev \
 pry \
 python3 \
+qt5-default \
 rake \
 ruby-method-source \
 swig \
@@ -177,6 +178,7 @@ ncurses-doc \
 opencl-1.2-man-doc \
 opengl-4-man-doc \
 openmpi-doc \
+qt5-doc \
 "
 
 PACKAGE_LIST_NONFREE="\
@@ -201,7 +203,7 @@ apt-get install                        \
 apt-get install                        \
         ${PACKAGE_LIST_NONFREE}        \
         ${PACKAGE_LIST_X11_MULTIMEDIA} \
-	${PACKAGE_LIST_VIRT}
+        ${PACKAGE_LIST_VIRT}
 
 # Check for inclusion:
 # logtail
