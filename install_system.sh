@@ -4,6 +4,11 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+# This script makes only sense as root.
+if [ "${USER}" != "root" ]; then
+    su -c "${0}" root
+    exit
+fi
 
 PACKAGE_LIST_EARLY_1="\
 git \
