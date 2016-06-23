@@ -14,10 +14,10 @@ GITHUB_USER_BASE_DOMAIN="https://github.com/schanur"
 #     mkdir -p local/bin/firefox
 # fi
 
-if [ ! -d "local/dev/dotfiles" ]; then
+if [ ! -d "local/dev/all/dotfiles" ]; then
     echo "Clone dotfiles repository"
-    mkdir -p local/dev
-    (cd local/dev && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/dotfiles.git)
+    mkdir -p local/dev/all
+    (cd local/dev/all && git clone --recursive ${GITHUB_USER_BASE_DOMAIN}/dotfiles.git)
 fi
 
 # if [ ! -d "local/dev" ]; then
